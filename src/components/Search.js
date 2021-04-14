@@ -20,8 +20,11 @@ class Search extends Component
                     <Link
                         to="/">Go to Main Page</Link>
                 </div>
+
                         <div className="search-books-input-wrapper">
                         {/*
+                                        <button className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</button>
+
                             NOTES: The search from BooksAPI is limited to a particular set of search terms.
                             You can find these search terms here:
                             https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
