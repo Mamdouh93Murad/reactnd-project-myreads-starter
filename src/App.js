@@ -4,7 +4,10 @@ import './App.css'
 import Category from './components/Category'
 import Book from './components/Book'
 import Search from './components/Search'
-import { Route } from 'react-router-dom'
+import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
+import Shelf from './components/Shelf'
+import { createBrowserHistory } from 'history'
+
 
 class BooksApp extends React.Component {
   state = {
@@ -20,12 +23,19 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     })
+
   }
-  render() {
+
+  
+  render() 
+  {
     return (
+      
     <div className="app">
-      <Route exact path='/' render={() => (<Category/>)}/>
-      <Route exact path='/search' render={() => (<Search/>)}/>
+      <BrowserRouter>
+        <Route exact path='/' render={() => (<Category/>)}/>
+        <Route exact path='/Search' render={() => (<Search/>)}/>
+      </BrowserRouter>
     </div>
       )
   }
