@@ -9,10 +9,20 @@ import { createBrowserHistory } from 'history'
 
 class Shelf extends Component
 {
+
     render()
     {
         return(
-                <p>Shelf</p>
+            <div>
+            {this.props.names.map((name) =>
+                (
+                <div className="bookshelf">
+                    <h2 className="bookshelf-title">{name}</h2>
+                </div>
+                ))
+            }
+            </div>
+
         )
     }
 }
