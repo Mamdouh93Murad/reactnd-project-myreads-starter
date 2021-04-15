@@ -13,7 +13,7 @@ class Category extends Component
     render()
     {
         return(
-            <div className="list-books">
+            <div className="list-books" >
                 <div className="open-search">
                     <Link
                         to="/Search">Search for a book</Link>
