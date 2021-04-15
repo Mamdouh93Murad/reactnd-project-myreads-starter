@@ -10,13 +10,11 @@ import { createBrowserHistory } from 'history'
 
 class Book extends Component
 {
-
     render()
     {
-        return(
+       return(
             <div>
                 <ol>
-                {this.props.books.filter((book) => (book.shelf === this.props.category))}
                 {this.props.books.map((book) => 
                 (
                 <li key={book.id}>

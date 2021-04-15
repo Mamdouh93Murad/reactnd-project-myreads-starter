@@ -22,6 +22,7 @@ class Shelf extends Component
         BooksAPI.getAll().then((books) => {
           this.setState({ books })
         })
+        
     }
 
     render()
@@ -30,9 +31,9 @@ class Shelf extends Component
             <div>
             {this.props.names.map((name) =>
                 (
-                <div className="bookshelf">
+                <div key={name} className="bookshelf">
                     <h2 className="bookshelf-title">{name}</h2>
-                    <Book category={name}  books={this.state.books}/>
+                    <Book category={name} books={this.state.books.filter((book) => book.shelf === `${name}`)}/>
                 </div>
                 ))
             }

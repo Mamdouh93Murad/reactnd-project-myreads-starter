@@ -6,7 +6,7 @@ import Book from './Book'
 import Search from './Search'
 import Shelf from './Shelf'
 import { createBrowserHistory } from 'history'
-const names = ['Currently Reading', 'Want to Read', 'Read']
+const names = ['currentlyReading', 'wantToRead', 'read']
 class Category extends Component
 {
 
