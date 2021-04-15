@@ -21,7 +21,7 @@ class Category extends Component
                 <div className="list-books-title">
                     <h1>MyReads</h1>
                 </div>
-                <Shelf names={names}/>
+                <Shelf books={this.props.books} names={names}/>
             </div>
         )
     }

@@ -9,21 +9,7 @@ import { createBrowserHistory } from 'history'
 
 class Shelf extends Component
 {
-    state = {
-        /**
-         * TODO: Instead of using this state variable to keep track of which page
-         * we're on, use the URL in the browser's address bar. This will ensure that
-         * users can use the browser's back and forward buttons to navigate between
-         * pages, as well as provide a good URL they can bookmark and share.
-         */
-        books: []
-      }
-      componentDidMount() {
-        BooksAPI.getAll().then((books) => {
-          this.setState({ books })
-        })
-        
-    }
+
 
     render()
     {
@@ -33,7 +19,7 @@ class Shelf extends Component
                 (
                 <div key={name} className="bookshelf">
                     <h2 className="bookshelf-title">{name}</h2>
-                    <Book category={name} books={this.state.books.filter((book) => book.shelf === `${name}`)}/>
+                    <Book category={name} books={this.props.books.filter((book) => book.shelf === `${name}`)}/>
                 </div>
                 ))
             }

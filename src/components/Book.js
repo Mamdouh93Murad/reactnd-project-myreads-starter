@@ -10,6 +10,7 @@ import { createBrowserHistory } from 'history'
 
 class Book extends Component
 {
+
     render()
     {
        return(
@@ -23,7 +24,8 @@ class Book extends Component
                       <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                       <div className="book-shelf-changer">
                         <select
-                          onChange={this.shelfChange}
+                          value={this.state.shelf}
+                          onChange={this.handleChange}
                           id={book.id}
                           >
                           <option
