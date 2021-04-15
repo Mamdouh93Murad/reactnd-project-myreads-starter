@@ -10,24 +10,22 @@ import { createBrowserHistory } from 'history'
 
 class Book extends Component
 {
-
+    
     render()
     {
        return(
             <div className="bookshelf-books">
                 <ol className="books-grid">
-                {this.props.books.map((book) => 
+                {this.props.books && this.props.books.length ?
+                (
+                this.props.books.map((book) => 
                 (
                 <li key={book.id}>
                   <div className="book">
                     <div className="book-top">
                       <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                       <div className="book-shelf-changer">
-                        <select
-                          
-                          onChange={this.handleChange}
-                          id={book.id}
-                          >
+                        <select>
                           <option
                             value="none"
                             disabled
@@ -49,7 +47,8 @@ class Book extends Component
                     <div className="book-authors">{book.author}</div>
                   </div>
                 </li>
-                ))}
+                ))): 
+                <div>No Result</div>}
                 </ol>
             </div>
         )
