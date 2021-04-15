@@ -14,8 +14,8 @@ class Book extends Component
     render()
     {
        return(
-            <div>
-                <ol>
+            <div className="bookshelf-books">
+                <ol className="books-grid">
                 {this.props.books.map((book) => 
                 (
                 <li key={book.id}>
@@ -24,7 +24,7 @@ class Book extends Component
                       <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                       <div className="book-shelf-changer">
                         <select
-                          value={this.state.shelf}
+                          
                           onChange={this.handleChange}
                           id={book.id}
                           >

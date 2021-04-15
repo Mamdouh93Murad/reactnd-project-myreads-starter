@@ -23,7 +23,6 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     })
-    
   }
   render() 
   {
