@@ -10,7 +10,12 @@ import { createBrowserHistory } from 'history'
 
 class Book extends Component
 {
-    
+
+    handleChange = (event) => {
+        BooksAPI.update(event.target.id, event.target.value).then((response)=> {
+          console.log(response)
+        })
+      }
     render()
     {
        return(
@@ -25,7 +30,11 @@ class Book extends Component
                     <div className="book-top">
                       <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                       <div className="book-shelf-changer">
-                        <select>
+                        <select                         
+                            value={book.shelf}
+                            onChange={this.handleChange}
+                            id={book.id}
+                        >
                           <option
                             value="none"
                             disabled
