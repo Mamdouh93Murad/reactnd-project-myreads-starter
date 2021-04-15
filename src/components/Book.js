@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
-import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
+import {Route, BrowserRouter, Link, Router, Redirect , useHistory} from 'react-router-dom'
 import '../App.css'
 import Category from './Category'
 import Search from './Search'
@@ -10,10 +10,18 @@ import { createBrowserHistory } from 'history'
 
 class Book extends Component
 {
-
+    // state = 
+    // {
+    //     shelf : ''
+    // }
     handleChange = (event) => {
-        BooksAPI.update(event.target.id, event.target.value).then((response)=> {
-          console.log(response)
+        console.log(event.target.id)
+        console.log(event.target.value)
+        // console.log(this.state.shelf)
+        BooksAPI.update({'id': event.target.id}, event.target.value).then((response)=> {
+            window.location.href = "http://localhost:3000/";
+
+         
         })
       }
     render()
@@ -37,7 +45,7 @@ class Book extends Component
                         >
                           <option
                             value="none"
-                            disabled
+                            // disabled
                             >Move to...</option>
                           <option
                             value="currentlyReading"
@@ -53,7 +61,7 @@ class Book extends Component
                       </div>
                     </div>
                     <div className="book-title">{book.title}</div>
-                    <div className="book-authors">{book.author}</div>
+                    <div className="book-authors">{book.authors}</div>
                   </div>
                 </li>
                 ))): 
