@@ -29,7 +29,7 @@ class Search extends Component
     {
         this.props.library.map((b) =>
         (
-            this.state.books.map((book) => b.id === book.id &&
+            this.state.books.map((book) => b.id === book.id  &&
             (
                 book.shelf = b.shelf
             ))
