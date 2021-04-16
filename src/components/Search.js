@@ -13,16 +13,12 @@ class Search extends Component
 {
     state = {
         books:[],
-        library: [],
         query:''
       }
       handleChange = (event) => {
         this.setState({query:event.target.value });
       }
-      componentDidMount() {
-        BooksAPI.getAll().then((library) => {
-          this.setState({library})
-        })}
+
       search = () => {
         this.state.query.length && BooksAPI.search(this.state.query).then((books)=> {
           console.log(books);
@@ -31,7 +27,7 @@ class Search extends Component
       }
     render()
     {
-        this.state.library.map((b) =>
+        this.props.library.map((b) =>
         (
             this.state.books.map((book) => b.id === book.id &&
             (

@@ -26,8 +26,8 @@ class BooksApp extends React.Component {
     })
   }
     handleChange = (event) => {
-      console.log(event.target.id)
-      console.log(event.target.value)
+      // console.log(event.target.id)
+      // console.log(event.target.value)
       // console.log(this.state.shelf)
       BooksAPI.update({'id': event.target.id}, event.target.value).then((response)=> {
         console.log(response)  
@@ -43,7 +43,7 @@ class BooksApp extends React.Component {
     <div className="app">
       <BrowserRouter>
         <Route exact path='/' render={() => (<Category handleChange={this.handleChange} books={this.state.books}/>)}/>
-        <Route exact path='/Search' render={() => (<Search/>)}/>
+        <Route exact path='/Search' render={() => (<Search library={this.state.books}/>)}/>
       </BrowserRouter>
     </div>
       )
