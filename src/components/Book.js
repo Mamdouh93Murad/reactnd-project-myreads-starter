@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import * as BooksAPI from '../BooksAPI'
+// import * as BooksAPI from '../BooksAPI'
 // import {Route, BrowserRouter, Link, Router, Redirect , useHistory} from 'react-router-dom'
 import '../App.css'
 // import Category from './Category'
@@ -10,13 +10,10 @@ import '../App.css'
 
 class Book extends Component
 {
-    // state = 
-    // {
-    //     shelf : ''
-    // }
+  
 
     render()
-    {
+    { 
        return(
             <div className="bookshelf-books">
                 <ol className="books-grid">
@@ -27,7 +24,7 @@ class Book extends Component
                 <li key={book.id}>
                   <div className="book">
                     <div className="book-top">
-                      <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
+                      <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})`}}></div>
                       <div className="book-shelf-changer">
                         <select                         
                             value={book.shelf}

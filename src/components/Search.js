@@ -13,20 +13,31 @@ class Search extends Component
 {
     state = {
         books:[],
+        library: [],
         query:''
       }
       handleChange = (event) => {
         this.setState({query:event.target.value });
       }
-
+      componentDidMount() {
+        BooksAPI.getAll().then((library) => {
+          this.setState({library})
+        })}
       search = () => {
-        BooksAPI.search(this.state.query).then((books)=> {
+        this.state.query.length && BooksAPI.search(this.state.query).then((books)=> {
           console.log(books);
           this.setState( {books:books} )
         })
       }
     render()
     {
+        this.state.library.map((b) =>
+        (
+            this.state.books.map((book) => b.id === book.id &&
+            (
+                book.shelf = b.shelf
+            ))
+        ))
         return(
             <div className="search-books">
 

@@ -17,11 +17,12 @@ class BooksApp extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    books: []
+    books: [],
+    shelf: ''
   }
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-      this.setState({ books })
+      this.setState({books})
     })
   }
     handleChange = (event) => {
@@ -29,8 +30,10 @@ class BooksApp extends React.Component {
       console.log(event.target.value)
       // console.log(this.state.shelf)
       BooksAPI.update({'id': event.target.id}, event.target.value).then((response)=> {
-          window.location.href = "http://localhost:3000/";
+        console.log(response)  
+        window.location.href = "http://localhost:3000/";
       })
+
     }
 
   render() 
