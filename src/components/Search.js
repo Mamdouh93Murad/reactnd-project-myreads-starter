@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
-import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../App.css'
-import Category from './Category'
+// import Category from './Category'
 import Book from './Book'
-import Shelf from './Shelf'
-import { createBrowserHistory } from 'history'
+// import Shelf from './Shelf'
+// import { createBrowserHistory } from 'history'
 // The Search Functionality and Implementation has been done in accordance with 
 // https://stackoverflow.com/questions/63824327/react-js-how-do-you-implement-search-functionality
 // specially the part where we implement the Key-Press and invoke the Search Function
@@ -42,7 +42,7 @@ class Search extends Component
                     type="text"
                     placeholder="Search by title or author"
                     value={this.state.query}
-                    onKeyPress={(event) => { event.key === 'Enter' && this.search(); }}
+                    onKeyPress={this.search()}
                     onChange={this.handleChange}
                 />   
             </div>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import * as BooksAPI from '../BooksAPI'
-import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
+// import * as BooksAPI from '../BooksAPI'
+import {Link} from 'react-router-dom'
 import '../App.css'
-import Book from './Book'
-import Search from './Search'
+// import Book from './Book'
+// import Search from './Search'
 import Shelf from './Shelf'
-import { createBrowserHistory } from 'history'
+// import { createBrowserHistory } from 'history'
 const names = ['currentlyReading', 'wantToRead', 'read']
 class Category extends Component
 {
@@ -21,7 +21,7 @@ class Category extends Component
                 <div className="list-books-title">
                     <h1>MyReads</h1>
                 </div>
-                <Shelf books={this.props.books} names={names}/>
+                <Shelf handleChange={this.props.handleChange} books={this.props.books} names={names}/>
             </div>
         )
     }

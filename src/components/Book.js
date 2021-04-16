@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
-import {Route, BrowserRouter, Link, Router, Redirect , useHistory} from 'react-router-dom'
+// import {Route, BrowserRouter, Link, Router, Redirect , useHistory} from 'react-router-dom'
 import '../App.css'
-import Category from './Category'
-import Search from './Search'
-import Shelf from './Shelf'
-import { createBrowserHistory } from 'history'
+// import Category from './Category'
+// import Search from './Search'
+// import Shelf from './Shelf'
+// import { createBrowserHistory } from 'history'
 
 
 class Book extends Component
@@ -14,16 +14,7 @@ class Book extends Component
     // {
     //     shelf : ''
     // }
-    handleChange = (event) => {
-        console.log(event.target.id)
-        console.log(event.target.value)
-        // console.log(this.state.shelf)
-        BooksAPI.update({'id': event.target.id}, event.target.value).then((response)=> {
-            window.location.href = "http://localhost:3000/";
 
-         
-        })
-      }
     render()
     {
        return(
@@ -40,7 +31,7 @@ class Book extends Component
                       <div className="book-shelf-changer">
                         <select                         
                             value={book.shelf}
-                            onChange={this.handleChange}
+                            onChange={this.props.handleChange}
                             id={book.id}
                         >
                           <option
