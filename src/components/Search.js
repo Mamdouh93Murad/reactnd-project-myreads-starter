@@ -25,15 +25,19 @@ class Search extends Component
           this.setState( {books:books} )
         })
       }
-    render()
-    {
-        this.props.library.map((b) =>
+      componentDidMount() {
+        this.props.library.map((b) => 
         (
             this.state.books.map((book) => b.id === book.id  &&
             (
                 book.shelf = b.shelf
             ))
         ))
+        }
+      
+    render()
+    {
+
         return(
             <div className="search-books">
 
