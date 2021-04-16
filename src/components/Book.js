@@ -26,15 +26,18 @@ class Book extends Component
                     <div className="book-top">
                       <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: book.imageLinks ?  `url(${book.imageLinks.smallThumbnail})` : `url(${book.backgroundImage})`}}></div>
                       <div className="book-shelf-changer">
-                        <select                         
+                        <select       
+                            defaultValue='None'                  
                             value={book.shelf}
                             onChange={this.props.handleChange}
                             id={book.id}
                         >
                           <option
                             value="none"
-                            // disabled
+                            disabled
                             >Move to...</option>
+                            <option
+                            value="none">None</option>
                           <option
                             value="currentlyReading"
                             >Currently Reading</option>
@@ -43,8 +46,7 @@ class Book extends Component
                           >Want to Read</option>
                           <option
                             value="read">Read</option>
-                          <option
-                            value="none">None</option>
+                          
                         </select>
                       </div>
                     </div>
