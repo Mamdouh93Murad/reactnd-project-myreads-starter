@@ -19,7 +19,7 @@ class Shelf extends Component
                 (
                 <div key={name} className="bookshelf">
                     <h2 className="bookshelf-title">{name}</h2>
-                    <Book handleChange={this.props.handleChange} category={name} books={this.props.books.filter((book) => book.shelf === `${name}`)}/>
+                    <Book category={name} books={this.props.books.filter((book) => book.shelf === `${name}`)}/>
                 </div>
                 ))
             }

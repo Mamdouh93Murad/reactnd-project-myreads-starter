@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import * as BooksAPI from '../BooksAPI'
+// import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import '../App.css'
 // import Book from './Book'
@@ -21,7 +22,7 @@ class Category extends Component
                 <div className="list-books-title">
                     <h1>MyReads</h1>
                 </div>
-                <Shelf handleChange={this.props.handleChange} books={this.props.books} names={names}/>
+                <Shelf books={this.props.books} names={names}/>
             </div>
         )
     }

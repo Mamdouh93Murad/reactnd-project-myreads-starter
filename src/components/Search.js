@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
+// import {Route, BrowserRouter, Link, Router} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import '../App.css'
 // import Category from './Category'
@@ -24,17 +25,7 @@ class Search extends Component
           console.log(books);
           this.setState( {books:books} )
         })
-        }
-    //   componentDidMount() {
-    //     this.props.library.map((b) => 
-    //     (
-    //         this.state.books.map((book) => b.id === book.id  &&
-    //         (
-    //             book.shelf = b.shelf
-    //         ))
-    //     ))
-    //     }
-      
+      }
     render()
     {
         const { library } = this.props
@@ -50,7 +41,6 @@ class Search extends Component
             return book
           })
         }
-
         return(
             <div className="search-books">
 
@@ -73,7 +63,7 @@ class Search extends Component
         </div>
         <div className="search-books-results">
             <ol className="books-grid">
-                <Book handleChange={this.props.handleChange} books={verifiedBooks}/>
+                <Book books={verifiedBooks}/>
             </ol>
         </div>
     </div>
